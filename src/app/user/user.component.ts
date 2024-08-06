@@ -7,11 +7,7 @@ import {
 } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
-interface User {
-  id: string;
-  name: string;
-  avatar: string;
-}
+import { User } from './user.model';
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -25,6 +21,8 @@ export class UserComponent {
   // avatar = input.required<string>();
   // name = input.required<string>();
   // id = input.required<string>();
+
+  selected = input.required<boolean>();
   user = input.required<User>();
   select = output<string>();
 
